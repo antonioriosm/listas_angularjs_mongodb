@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" ng-app>
+<head>
+    <meta charset="utf-8" />
+    <title>Listas Desplegables con PHP, MongoDB y AngularJS</title>
+</head>
+<body>
+<h2>LISTAS DESPLEGABLES CON PHP, MONGODB Y ANGULARJS</h2>
+<fieldset ng-controller="UbigeoCtrl">
+    <legend>Ubicaciones Geográficas</legend>
+    <label>Departamentos :</label>
+    <select ng-model="dpto" ng-change=cargarProvincias() ng-options="dpt.coddep as dpt.desdep for dpt in dptos"></select>
+
+    <label>Provincias :</label>
+    <select ng-model="prov" ng-change=cargarDistritos() ng-options="pro.codpro as pro.despro for pro in provs"></select>
+
+    <label>Distritos :</label>
+    <select ng-model="dist" ng-options="dis.coddis as dis.desdis for dis in dists"></select>
+</fieldset>
+
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript" src="ubigeo.js"></script>
+</body>
+</html>
